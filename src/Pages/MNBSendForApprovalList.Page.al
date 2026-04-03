@@ -57,6 +57,18 @@ page 65410 "MNB Send For Approval List"
                     Approval.Approve(Rec);
                 end;
             }
+            action(Reject)
+            {
+                Caption = 'Reject';
+                ToolTip = 'Reject this sales document';
+                Image = Cancel;
+                trigger OnAction()
+                var
+                    Approval: Codeunit "MNB Sales Approval";
+                begin
+                    Approval.Reject(Rec);
+                end;
+            }
         }
     }
 }
