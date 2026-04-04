@@ -43,8 +43,10 @@ page 65410 "MNB Send For Approval List"
                     Approval: Codeunit "MNB Sales Approval";
                 begin
                     Approval.SendForApproval(Rec);
+                    Rec.Modify(); // osveži status na listi
                 end;
             }
+
             action(Approve)
             {
                 Caption = 'Approve';
@@ -55,8 +57,10 @@ page 65410 "MNB Send For Approval List"
                     Approval: Codeunit "MNB Sales Approval";
                 begin
                     Approval.Approve(Rec);
+                    Rec.Modify();
                 end;
             }
+
             action(Reject)
             {
                 Caption = 'Reject';
@@ -67,6 +71,7 @@ page 65410 "MNB Send For Approval List"
                     Approval: Codeunit "MNB Sales Approval";
                 begin
                     Approval.Reject(Rec);
+                    Rec.Modify();
                 end;
             }
         }
