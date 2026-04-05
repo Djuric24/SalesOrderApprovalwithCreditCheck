@@ -19,6 +19,7 @@ table 65401 "MNB Sales Header Local"
         {
             Caption = 'Customer No.';
             TableRelation = "MNB Customer"."No.";
+            Editable = true;
         }
     }
 
