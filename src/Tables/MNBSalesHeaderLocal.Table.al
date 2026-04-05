@@ -18,8 +18,19 @@ table 65401 "MNB Sales Header Local"
         field(3; "Customer No."; Code[20])
         {
             Caption = 'Customer No.';
+        }
+        field(30; "MNB Customer No."; Code[20])
+        {
+            Caption = 'Customer No.';
             TableRelation = "MNB Customer"."No.";
-            Editable = true;
+
+            trigger OnValidate()
+            var
+                Customer: Record "MNB Customer";
+            begin
+                if Customer.Get("MNB Customer No.") then
+                    "Customer Name" := Customer.Name;
+            end;
         }
     }
 

@@ -7,7 +7,7 @@ codeunit 65405 "MNB Sales Approval"
         Customer: Record "MNB Customer";
     begin
 
-        if not Customer.Get(SalesHeader."Customer No.") then
+        if not Customer.Get(SalesHeader."MNB Customer No.") then
             Error('Customer does not exist.');
 
         if Customer.Balance > Customer."Credit Limit" then

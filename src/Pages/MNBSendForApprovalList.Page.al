@@ -17,6 +17,10 @@ page 65410 "MNB Send For Approval List"
                 {
                     ToolTip = 'Specifies the document number.';
                 }
+                field("MNB Customer No."; Rec."MNB Customer No.")
+                {
+                    ToolTip = 'Specifies the customer number.';
+                }
                 field("Customer Name"; Rec."Customer Name")
                 {
                     ToolTip = 'Specifies the customer name.';
