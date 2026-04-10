@@ -8,11 +8,13 @@ codeunit 65405 "MNB Sales Approval"
     begin
 
         if not Customer.Get(SalesHeader."MNB Customer No.") then
-            Error('Customer does not exist.');
+            Error('Customer %1 does not exist.', SalesHeader."MNB Customer No.");
 
-        if Customer.Balance > Customer."Credit Limit" then
-            Error('Customer %1 exceeded credit limit.', Customer."No.");
+        if (Customer.Balance + SalesHeader.Amount) > Customer."Credit Limit" then
+            Error('Credit limit exceeded for customer %1. Available: %2, Attempted: %3',
+                Customer.Name, Customer."Credit Limit" - Customer.Balance, SalesHeader.Amount);
 
+        SalesHeader."MNB Credit Checked" := true;
         SalesHeader."MNB Approval Status" := SalesHeader."MNB Approval Status"::"Pending Approval";
         SalesHeader.Modify();
     end;

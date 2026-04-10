@@ -17,6 +17,10 @@ page 65401 "MNB Sales List"
                 {
                     ToolTip = 'Specifies the document number.';
                 }
+                field("Customer No."; Rec."MNB Customer No.")
+                {
+                    ToolTip = 'Specifies the customer number.';
+                }
                 field("Customer Name"; Rec."Customer Name")
                 {
                     ToolTip = 'Specifies the customer name.';
@@ -28,6 +32,10 @@ page 65401 "MNB Sales List"
                 field("MNB Approval Status"; Rec."MNB Approval Status")
                 {
                     ToolTip = 'Specifies the approval status.';
+                }
+                field("Amount"; Rec."Amount")
+                {
+                    ToolTip = 'Scefifies the ..';
                 }
             }
         }

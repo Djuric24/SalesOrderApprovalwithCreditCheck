@@ -19,6 +19,10 @@ table 65401 "MNB Sales Header Local"
         {
             Caption = 'Customer No.';
         }
+        field(4; "Amount"; Decimal)
+        {
+            Caption = 'Amount';
+        }
         field(30; "MNB Customer No."; Code[20])
         {
             Caption = 'Customer No.';
@@ -31,6 +35,16 @@ table 65401 "MNB Sales Header Local"
                 if Customer.Get("MNB Customer No.") then
                     "Customer Name" := Customer.Name;
             end;
+        }
+
+        field(32; "MNB Credit Checked"; Boolean)
+        {
+            Caption = 'Credit Checked';
+        }
+
+        field(33; "MNB Approval Status"; Enum "MNB Sales Approval Status")
+        {
+            Caption = 'Approval Status';
         }
     }
 
